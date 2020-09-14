@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -21,6 +23,8 @@ import { HeaderComponent } from './modules/navigation/header/header.component';
   imports: [
     BrowserModule,
     MatSliderModule,
+    MatToolbarModule,
+    MatButtonModule,
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule
   ],
