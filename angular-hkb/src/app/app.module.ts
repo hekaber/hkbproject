@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './modules/about/about.component';
+import { AboutComponent } from './components/about/about.component';
 import { APP_ROUTES } from './app.routes';
-import { ProjectsComponent } from './modules/projects/projects.component';
-import { HeaderComponent } from './modules/navigation/header/header.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { HeaderComponent } from './components/navigation/header/header.component';
+import { MaterialModule } from './shared/material/material.module';
+import { SideListComponent } from './components/navigation/side-list/side-list.component';
+
 
 
 @NgModule({
@@ -18,15 +18,14 @@ import { HeaderComponent } from './modules/navigation/header/header.component';
     AppComponent,
     AboutComponent,
     ProjectsComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideListComponent
   ],
   imports: [
     BrowserModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatButtonModule,
+    FlexLayoutModule,
+    MaterialModule,
     RouterModule.forRoot(APP_ROUTES),
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
