@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() public sideToggle = new EventEmitter();
   
-  title = 'Karl';
+  title = 'HKB';
   constructor() {}
 
   ngOnInit(): void {

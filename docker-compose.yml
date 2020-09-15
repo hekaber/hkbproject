@@ -12,12 +12,12 @@ services: # Here we define our service(s)
         command: >
           bash -c "npm install && ng serve  --host 0.0.0.0 --port 4200"
 
-    # nginx-service:
-    #     container_name: nginxcontainer
-    #     build:
-    #         context: .
-    #         dockerfile: ./docker/nginx/Dockerfile
-    #     environment:
-    #         NODE_ENV: production
-    #     ports:
-    #         - 80:80
+    nginx-service:
+        container_name: nginxcontainer
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        environment:
+            NODE_ENV: production
+        ports:
+            - 80:80
