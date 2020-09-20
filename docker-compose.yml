@@ -21,13 +21,3 @@ services: # Here we define our service(s)
             NODE_ENV: production
         ports:
             - 80:80
-
-      dotnet-service:
-        container_name: dotnetcontainer
-        build:
-            context: .
-            dockerfile: ./docker/aspdotnet/Dockerfile
-        environment:
-            NODE_ENV: production
-        ports:
-            - 8000:8000
