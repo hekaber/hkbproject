@@ -10,6 +10,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { MaterialModule } from './shared/material/material.module';
 import { SideListComponent } from './components/navigation/side-list/side-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -19,7 +20,8 @@ import { SideListComponent } from './components/navigation/side-list/side-list.c
     AboutComponent,
     ProjectsComponent,
     HeaderComponent,
-    SideListComponent
+    SideListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

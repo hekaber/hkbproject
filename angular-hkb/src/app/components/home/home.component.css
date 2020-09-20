@@ -1,0 +1,26 @@
+.home-top__content {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80') center center no-repeat;
+    background-size: cover;
+}
+
+.card__container {
+    margin: 20px;
+}
+
+.accroach {
+    width: 50%;
+    height: 300px;
+    text-align: center;
+    padding: 5px;
+    color: #FFFFFF;
+}
+
+.mat-card {
+    height: 50vh;
+}
+
+.home__content {
+    background-color: #000000;
+}
