@@ -16,9 +16,7 @@
                 <mat-card-subtitle>{{job.description}}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content class="justify">
-                <p>
-                    {{job.text}}
-                </p>
+                <div [innerHTML]="job.text"></div>
             </mat-card-content>
         </mat-card>
     </div>
