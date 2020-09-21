@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Job } from '../models/job';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class JobService {
 
-  constructor(private fireStore: AngularFirestore) { }
+  constructor(private fireDatabase: AngularFireDatabase) { }
 
     formData: Job;
 
-    getAllJobs() {
-      
-        return this.fireStore.collection('jobs').snapshotChanges();
+    getAllJobs(): Observable<Job[]> {
+      return this.fireDatabase.list<Job>('/jobs').valueChanges();
     }
-
 }
