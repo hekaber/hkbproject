@@ -9,6 +9,7 @@ import { APP_ROUTES } from './app.routes';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { MaterialModule } from './shared/material/material.module';
+import { FirebaseModule } from './shared/firebase/firebase.module';
 import { SideListComponent } from './components/navigation/side-list/side-list.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -27,6 +28,7 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     FlexLayoutModule,
     MaterialModule,
+    FirebaseModule,
     RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [],
