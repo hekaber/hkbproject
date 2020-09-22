@@ -9,18 +9,17 @@
         </div>
     </div>
     <div #job_cards class="cards__container">
-        <div *ngFor="let job of jobs$ | async" class="card__container">
-            <mat-divider></mat-divider>
-            <mat-card class="example-card">
-                <mat-card-header>
-                    <div mat-card-avatar class="header-image"></div>
-                    <mat-card-title>{{job.title}}</mat-card-title>
-                    <mat-card-subtitle>{{job.description}}</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content class="justify">
-                    <div [innerHTML]="job.text"></div>
-                </mat-card-content>
-            </mat-card>
+        <div *ngFor="let job of jobs$ | async; let i=index;" class="card__container">
+            <div class="blog-card">
+                <div class="meta">
+                  <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+                </div>
+                <div class="description">
+                  <h1>{{job.title}}</h1>
+                  <h2>{{job.description}}</h2>
+                  <div [innerHTML]="job.text"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

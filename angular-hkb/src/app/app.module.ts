@@ -13,8 +13,6 @@ import { FirebaseModule } from './shared/firebase/firebase.module';
 import { SideListComponent } from './components/navigation/side-list/side-list.component';
 import { HomeComponent } from './components/home/home.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
