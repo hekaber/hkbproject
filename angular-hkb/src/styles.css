@@ -11,6 +11,7 @@ html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: block;
 }
 
 .justify {
@@ -30,4 +31,23 @@ body {
 
 .big__font {
     font-size: 40pt;
+}
+
+.button {
+    background-color: #14BF98;
+    border: 0.125rem solid #14bf98;
+    color: #FFFFFF;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #14bf98;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.button:focus {
+    outline: none; 
 }

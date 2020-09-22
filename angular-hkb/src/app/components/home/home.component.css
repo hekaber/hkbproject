@@ -6,7 +6,11 @@
 }
 
 .card__container {
-    margin: 20px;
+    margin: 50px;
+}
+
+.cards__container {
+    padding: 100px 10px;
 }
 
 .accroach {
@@ -23,4 +27,11 @@
 
 .home__content {
     background-color: #000000;
+}
+
+.button {
+    width: 300px;
+    height: 50px;
+    font-size: 12pt;
+    font-weight: bold;
 }

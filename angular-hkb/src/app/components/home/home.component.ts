@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { JobService } from '../../shared/providers/job.service';
 import { Job } from '../../shared/models/job';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,4 +19,12 @@ export class HomeComponent implements OnInit {
       this.jobs$ = this.service.getAllJobs();
   }
 
+  scrollToElement(element: HTMLElement): void {
+
+    element.scrollIntoView({
+      behavior: "smooth", 
+      block: "start", 
+      inline: "nearest"
+    });
+  }
 }

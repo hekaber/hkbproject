@@ -3,17 +3,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import configData from '../../config/config.json';
 
-const config = {
-    apiKey: "AIzaSyBppCoHIN2oQU2GdMlgsn3CHNsMBv-lB14",
-    authDomain: "hkbergerpage.firebaseapp.com",
-    databaseURL: "https://hkbergerpage.firebaseio.com",
-    projectId: "hkbergerpage",
-    storageBucket: "hkbergerpage.appspot.com",
-    messagingSenderId: "1061633195408",
-    appId: "1:1061633195408:web:4afe30e60abd7936130715",
-    measurementId: "G-NPFRHT11F3"
-};
+const config = configData;
 
 @NgModule({
     imports: [

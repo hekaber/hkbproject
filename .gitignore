@@ -4,6 +4,8 @@
 /angular-hkb/dist
 /angular-hkb/tmp
 /angular-hkb/out-tsc
+/angular-hkb/src/app/config.json
+
 # Only exists if Bazel was run
 /angular-hkb/bazel-out
 
@@ -45,3 +47,4 @@ speed-measure-plugin*.json
 .DS_Store
 Thumbs.db
 *.bkp
+angular-hkb/src/app/config/config.json
