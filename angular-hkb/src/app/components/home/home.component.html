@@ -13,23 +13,8 @@
             <h1 class="big__font">Technologies</h1>
         </div>
         <div class="logos container">
-            <div class="logo">
-                <img src="assets/img/python.svg"/>
-            </div>
-            <div class="logo">
-                <img src="assets/img/php.svg"/>
-            </div>
-            <div class="logo">
-                <img src="assets/img/java.svg"/>
-            </div>
-            <div class="logo">
-                <img src="assets/img/javascript.svg"/>
-            </div>
-            <div class="logo">
-                <img src="assets/img/css.svg"/>
-            </div>
-            <div class="logo">
-                <img src="assets/img/html.svg"/>
+            <div [@changeDivOpacity]=currentState *ngFor="let logo of logos" class="logo">
+                <img src="assets/img/{{logo}}"/>
             </div>
         </div>
         <button [ngStyle]="{'margin-top': '50px'}" class="button" (click)="scrollToElement(job_cards)">En savoir plus</button>
