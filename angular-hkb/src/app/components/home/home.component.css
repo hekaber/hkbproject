@@ -17,11 +17,35 @@
     }
 }
 
-.cards__container {
-    background-color: #2A3D79;
-    padding: 100px 10px;
+.cards {
+    background-color: #F2F2F2;
+}
+
+.skills {
+    background-color: #FFFFFF;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.logos {
+
+}
+
+.logo {
+    padding: 10px;
+    margin: 0 10px;
+    box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.75);
+    border: 1px solid #000000;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    padding: 10px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -33,11 +57,6 @@
     text-align: center;
     padding: 5px;
     color: #FFFFFF;
-}
-
-.mat-card {
-    background-color: #10172D;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .home__content {

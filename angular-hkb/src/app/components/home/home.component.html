@@ -4,11 +4,40 @@
             <div class="text__container">
                 <h1 class="big__font">Développeur Backend et Frontend</h1>
                 <p>Passionné et expérimenté. A l'aise aussi bien dans le travail en équipe qu'en autonomie totale.</p>
-                <button class="button" (click)="scrollToElement(job_cards)">Présentation</button>
+                <button class="button" (click)="scrollToElement(skills)">Présentation</button>
             </div>
         </div>
     </div>
-    <div #job_cards class="cards__container">
+    <div #skills class="skills container">
+        <div class="title">
+            <h1 class="big__font">Technologies</h1>
+        </div>
+        <div class="logos container">
+            <div class="logo">
+                <img src="assets/img/python.svg"/>
+            </div>
+            <div class="logo">
+                <img src="assets/img/php.svg"/>
+            </div>
+            <div class="logo">
+                <img src="assets/img/java.svg"/>
+            </div>
+            <div class="logo">
+                <img src="assets/img/javascript.svg"/>
+            </div>
+            <div class="logo">
+                <img src="assets/img/css.svg"/>
+            </div>
+            <div class="logo">
+                <img src="assets/img/html.svg"/>
+            </div>
+        </div>
+        <button [ngStyle]="{'margin-top': '50px'}" class="button" (click)="scrollToElement(job_cards)">En savoir plus</button>
+    </div>
+    <div #job_cards class="cards container">
+        <div class="title">
+            <h1 class="big__font">Emplois</h1>
+        </div>
         <div *ngFor="let job of jobs$ | async; let i=index;" class="card__container">
             <div class="blog-card">
                 <div class="meta">
