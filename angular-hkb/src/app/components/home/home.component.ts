@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { Observable } from 'rxjs';
 
 import { JobService } from '../../shared/providers/job.service';
+import { WindowService } from '../../shared/providers/window.service';
 import { Job } from '../../shared/models/job';
 
 @Component({
@@ -29,15 +30,18 @@ export class HomeComponent implements OnInit {
   topButtonState = 'initial';
   logos = ['python.svg', 'php.svg', 'java.svg', 'javascript.svg', 'css.svg', 'html.svg'];
   
-  constructor(private service: JobService) { }
+  constructor(
+    private jobService: JobService,
+    private windowRef: WindowService
+  ) { }
 
   ngOnInit(): void {
-      this.jobs$ = this.service.getAllJobs();
+      this.jobs$ = this.jobService.getAllJobs();
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event): void {
-    if (window.pageYOffset == 0) {
+    if (this.windowRef.getNativeWindow().pageYOffset == 0) {
       this.resetStates();
     }
   }
@@ -60,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   scrollToTop(): void {
     this.topButtonState = 'initial';
-      window.scrollTo({
+    this.windowRef.getNativeWindow().scrollTo({
         top: 0,
         behavior: "smooth"
       });
