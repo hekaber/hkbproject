@@ -13,7 +13,7 @@
             <h1 class="big__font">Technologies</h1>
         </div>
         <div class="logos container">
-            <div [@changeDivOpacity]=currentState *ngFor="let logo of logos" class="logo">
+            <div [@changeDivOpacity]=currentSkillState *ngFor="let logo of logos" class="logo">
                 <img src="assets/img/{{logo}}"/>
             </div>
         </div>
@@ -37,4 +37,6 @@
         </div>
     </div>
 </div>
-<button class="button"></button>
+<button [@changeDivOpacity]=topButtonState id="scrollTop" class="button" (click)="scrollToTop()">
+    <span class="material-icons">keyboard_arrow_up</span>
+</button>
