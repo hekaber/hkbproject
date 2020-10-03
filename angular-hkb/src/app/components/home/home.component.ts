@@ -29,11 +29,15 @@ export class HomeComponent implements OnInit {
   currentSkillState = 'initial';
   topButtonState = 'initial';
   logos = ['python.svg', 'php.svg', 'java.svg', 'javascript.svg', 'css.svg', 'html.svg'];
+  private mWindow;
   
   constructor(
     private jobService: JobService,
     private windowRef: WindowService
-  ) { }
+  ) {
+    
+    this.mWindow = windowRef.getNativeWindow();
+  }
 
   ngOnInit(): void {
       this.jobs$ = this.jobService.getAllJobs();
@@ -41,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event): void {
-    if (this.windowRef.getNativeWindow().pageYOffset == 0) {
+    if (this.mWindow.pageYOffset == 0) {
       this.resetStates();
     }
   }
@@ -64,7 +68,7 @@ export class HomeComponent implements OnInit {
 
   scrollToTop(): void {
     this.topButtonState = 'initial';
-    this.windowRef.getNativeWindow().scrollTo({
+    this.mWindow.scrollTo({
         top: 0,
         behavior: "smooth"
       });

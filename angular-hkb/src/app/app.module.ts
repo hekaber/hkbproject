@@ -19,8 +19,7 @@ import { WindowService } from './shared/providers/window.service';
     AboutComponent,
     ProjectsComponent,
     HeaderComponent,
-    HomeComponent,
-    WindowService
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +28,9 @@ import { WindowService } from './shared/providers/window.service';
     FirebaseModule,
     RouterModule.forRoot(APP_ROUTES),
   ],
-  providers: [],
+  providers: [
+    WindowService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
