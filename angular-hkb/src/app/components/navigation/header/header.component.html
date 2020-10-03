@@ -1,14 +1,8 @@
-<mat-toolbar id="main_header" color="primary">
-  <div fxHide.gt-xs>
-    <button mat-icon-button (click)="onToggleSide()">
-        <mat-icon>menu</mat-icon>
-    </button>
-</div>
-<div>
-    <a routerLink="">{{ title }}</a>
-</div>
-<div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+<nav>
+    <div id="home">
+        <a routerLink="">{{ title }}</a>
+    </div>
+    <ul class="navigation-items">
         <li>
             <a routerLink="/projects">Projects</a>
         </li>
@@ -16,5 +10,4 @@
             <a routerLink="/about">About</a>
         </li>
     </ul>
-</div>
-</mat-toolbar>
+</nav>
