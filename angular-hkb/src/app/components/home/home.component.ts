@@ -1,10 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Observable } from 'rxjs';
 
 import { JobService } from '../../shared/providers/job.service';
-import { WindowService } from '../../shared/providers/window.service';
+import { DomService } from '../../shared/providers/dom.service';
 import { Job } from '../../shared/models/job';
+
+const areas = 'top,skills,job_cards';
 
 @Component({
   selector: 'app-home',
@@ -25,18 +27,22 @@ import { Job } from '../../shared/models/job';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChildren(areas) sections: QueryList<ElementRef>;
+
   jobs$: Observable<Job[]>;
   currentSkillState = 'initial';
   topButtonState = 'initial';
   logos = ['python.svg', 'php.svg', 'java.svg', 'javascript.svg', 'css.svg', 'html.svg'];
-  private mWindow;
+  private _window: Window;
+  private _document: Document;
   
   constructor(
     private jobService: JobService,
-    private windowRef: WindowService
+    private domService: DomService
   ) {
     
-    this.mWindow = windowRef.getNativeWindow();
+    this._window = domService.getNativeWindow();
+    this._document = domService.getNativeDocument();
   }
 
   ngOnInit(): void {
@@ -44,8 +50,11 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event): void {
-    if (this.mWindow.pageYOffset == 0) {
+  onWindowScroll(): void {
+    const activeSection = this.sections.toArray().findIndex(section => this.isElementInViewport(section.nativeElement));
+    console.log(areas.split(',')[activeSection]);
+    if (this._window.pageYOffset == 0) {
+
       this.resetStates();
     }
   }
@@ -68,7 +77,7 @@ export class HomeComponent implements OnInit {
 
   scrollToTop(): void {
     this.topButtonState = 'initial';
-    this.mWindow.scrollTo({
+    this._window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
@@ -77,5 +86,17 @@ export class HomeComponent implements OnInit {
   private resetStates(): void {
     this.topButtonState = 'initial';
     this.currentSkillState = 'initial';
+  }
+
+  private isElementInViewport(el: HTMLElement): boolean {
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+      rect.bottom >= 0 &&
+      rect.right >= 0 &&
+      rect.top <= (this._window.innerHeight - 60 || this._document.documentElement.clientHeight - 60) &&
+      rect.left <= (this._window.innerWidth || this._document.documentElement.clientWidth)
+    );
   }
 }

@@ -11,7 +11,7 @@ import { HeaderComponent } from './components/navigation/header/header.component
 import { MaterialModule } from './shared/material/material.module';
 import { FirebaseModule } from './shared/firebase/firebase.module';
 import { HomeComponent } from './components/home/home.component';
-import { WindowService } from './shared/providers/window.service';
+import { DomService } from './shared/providers/dom.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { WindowService } from './shared/providers/window.service';
     RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
-    WindowService
+    DomService
   ],
   bootstrap: [AppComponent]
 })
