@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event): void {
     if (window.pageYOffset == 0) {
-      this.topButtonState = 'initial';
+      this.resetStates();
     }
   }
 
@@ -64,5 +64,10 @@ export class HomeComponent implements OnInit {
         top: 0,
         behavior: "smooth"
       });
+  }
+
+  private resetStates(): void {
+    this.topButtonState = 'initial';
+    this.currentSkillState = 'initial';
   }
 }
