@@ -10,6 +10,14 @@
     padding: 50px;
 }
 
+.skills, .contact {
+    flex-direction: column;
+}
+
+app-contact-form {
+    width: 80%;
+}
+
 @media only screen and (min-width: 600px) {
     .card__container {
         width: 43%;
@@ -23,7 +31,6 @@
 
 .skills {
     background-color: #FFFFFF;
-    flex-direction: column;
     height: 100vh;
 }
 
@@ -40,6 +47,7 @@
 }
 
 .container {
+    width: 100%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;

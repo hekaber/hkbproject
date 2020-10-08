@@ -1,0 +1,42 @@
+.form-group {
+    background-color: #14BF98;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-control {
+    margin: 10px 0;
+}
+
+.form-control label {
+    color: #FFFFFF;
+    display: block;
+}
+
+.form-control textarea {
+    height: 150px;
+}
+
+.form-control input,
+.form-control textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+
+@media(min-width: 768px){
+
+    .form-control label {
+        width: 35%;
+        vertical-align: top;
+        color: #FFFFFF;
+        display: inline-block;
+    }
+
+
+    .form-control input,
+    .form-control textarea {
+        width: 54%;
+    }
+}

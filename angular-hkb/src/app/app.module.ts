@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { APP_ROUTES } from './app.routes';
@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { FirebaseModule } from './shared/firebase/firebase.module';
 import { HomeComponent } from './components/home/home.component';
 import { DomService } from './shared/providers/dom.service';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,15 @@ import { DomService } from './shared/providers/dom.service';
     AboutComponent,
     ProjectsComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     MaterialModule,
     FirebaseModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [

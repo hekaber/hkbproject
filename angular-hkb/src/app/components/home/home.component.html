@@ -36,6 +36,12 @@
             </div>
         </div>
     </div>
+    <div #contact class="contact container">
+        <div class="title">
+            <h1 [ngStyle]="{'color': '#FFFFFF'}" class="big__font">Contact</h1>
+        </div>
+        <app-contact-form></app-contact-form>
+    </div>
 </div>
 <button [@changeDivOpacity]=topButtonState id="scrollTop" class="button" (click)="scrollToTop()">
     <span class="material-icons">keyboard_arrow_up</span>

@@ -1,0 +1,29 @@
+<div class="form-group">
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+        <div class="form-control">
+            <label for="firstName">Prénom:</label>
+            <input type="text" formControlName="firstName" placeholder="prénom">
+        </div>
+        <div class="form-control">
+            <label for="lastName">Nom:</label>
+            <input type="text" formControlName="lastName" placeholder="nom">
+        </div>
+        <div class="form-control">
+            <label for="company">Société:</label>
+            <input type="text" formControlName="company" placeholder="société">
+        </div>
+        <div class="form-control">
+            <label for="email">Email:</label>
+            <input type="text" formControlName="email" placeholder="mon@email">
+        </div>
+        <div class="form-control">
+            <label for="phone">Téléphone:</label>
+            <input type="text" formControlName="phone">
+        </div>
+        <div class="form-control">
+            <label for="message">Message:</label>
+            <textarea formControlName="message" placeholder="Votre message"></textarea>
+        </div>
+        <button type="submit" [disabled]="!formData.valid">Submit</button>
+    </form>
+</div>

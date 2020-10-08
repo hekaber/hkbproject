@@ -25,6 +25,7 @@ nav {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    z-index: 1000;
 }
 
 nav ul {
@@ -34,10 +35,4 @@ nav ul {
 
 #home, nav ul li {
     margin: 0 10px;
-}
-
-@media(max-width: 959px){
-    mat-toolbar{
-        border-radius: 0px;
-    }
 }
