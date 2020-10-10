@@ -4,9 +4,19 @@
             <label class="required" for="firstName">Prénom:</label>
             <input type="text" formControlName="firstName" placeholder="prénom">
         </div>
+        <div *ngIf="formData.controls['firstName'].invalid && formData.controls['firstName'].dirty || formData.controls['firstName'].touched">
+            <div class="error-warning" *ngIf="formData.controls['firstName'].errors?.required">
+                Prénom obligatoire.
+            </div>
+        </div>
         <div class="form-control">
             <label class="required" for="lastName">Nom:</label>
             <input type="text" formControlName="lastName" placeholder="nom">
+        </div>
+        <div *ngIf="formData.controls['lastName'].invalid && formData.controls['lastName'].dirty || formData.controls['lastName'].touched">
+            <div class="error-warning" *ngIf="formData.controls['lastName'].errors?.required">
+                Nom obligatoire.
+            </div>
         </div>
         <div class="form-control">
             <label for="company">Société:</label>
@@ -16,6 +26,14 @@
             <label class="required" for="email">Email:</label>
             <input type="text" formControlName="email" placeholder="mon@email">
         </div>
+        <div *ngIf="formData.controls['email'].invalid && formData.controls['email'].dirty || formData.controls['email'].touched">
+            <div class="error-warning" *ngIf="formData.controls['email'].errors?.required">
+                Email obligatoire.
+            </div>
+            <div class="error-warning" *ngIf="formData.controls['email'].errors?.pattern">
+                Veuillez entrer un email valide.
+            </div>
+        </div>
         <div class="form-control">
             <label for="phone">Téléphone:</label>
             <input type="text" formControlName="phone">
@@ -23,6 +41,11 @@
         <div class="form-control">
             <label class="required" for="message">Message:</label>
             <textarea formControlName="message" placeholder="Votre message"></textarea>
+        </div>
+        <div *ngIf="formData.controls['message'].invalid && formData.controls['message'].dirty || formData.controls['message'].touched">
+            <div class="error-warning" *ngIf="formData.controls['message'].errors?.required">
+                Message obligatoire.
+            </div>
         </div>
         <div class="button-submit">
             <button type="submit" [disabled]="!formData.valid">Envoyer</button>

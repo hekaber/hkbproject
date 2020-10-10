@@ -63,7 +63,15 @@ button[type="submit"]:hover {
     clear: both;
 }
 
+.error-warning {
+    color: red;
+}
+
 @media(min-width: 768px){
+
+    .error-warning {
+        padding-left: 20%;
+    }
 
     .form-control label {
         width: 20%;
