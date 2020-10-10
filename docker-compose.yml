@@ -21,3 +21,24 @@ services: # Here we define our service(s)
             NODE_ENV: production
         ports:
             - 80:80
+
+    db:
+        image: postgres
+        environment: 
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+
+    django-service:
+        container_name: djangocontainer
+        build:
+            context: .
+            dockerfile: ./docker/django/Dockerfile
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./django-hkb:/usr/src/app
+        ports:
+            - 8000:8000
+
+
+
