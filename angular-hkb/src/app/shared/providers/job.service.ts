@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-
 export class JobService {
 
   constructor(private fireDatabase: AngularFireDatabase) { }

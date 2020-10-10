@@ -4,18 +4,24 @@
             <label class="required" for="firstName">Prénom:</label>
             <input type="text" formControlName="firstName" placeholder="prénom">
         </div>
-        <div *ngIf="formData.controls['firstName'].invalid && formData.controls['firstName'].dirty || formData.controls['firstName'].touched">
-            <div class="error-warning" *ngIf="formData.controls['firstName'].errors?.required">
+        <div *ngIf="firstName.invalid && firstName.dirty || firstName.touched">
+            <div class="error-warning" *ngIf="firstName.errors?.required">
                 Prénom obligatoire.
+            </div>
+            <div class="error-warning" *ngIf="firstName.errors?.minlength">
+                Minimum 3 caractères requis
             </div>
         </div>
         <div class="form-control">
             <label class="required" for="lastName">Nom:</label>
             <input type="text" formControlName="lastName" placeholder="nom">
         </div>
-        <div *ngIf="formData.controls['lastName'].invalid && formData.controls['lastName'].dirty || formData.controls['lastName'].touched">
-            <div class="error-warning" *ngIf="formData.controls['lastName'].errors?.required">
+        <div *ngIf="lastName.invalid && lastName.dirty || lastName.touched">
+            <div class="error-warning" *ngIf="lastName.errors?.required">
                 Nom obligatoire.
+            </div>
+            <div class="error-warning" *ngIf="lastName.errors?.minlength">
+                Minimum 3 caractères requis
             </div>
         </div>
         <div class="form-control">
@@ -26,11 +32,11 @@
             <label class="required" for="email">Email:</label>
             <input type="text" formControlName="email" placeholder="mon@email">
         </div>
-        <div *ngIf="formData.controls['email'].invalid && formData.controls['email'].dirty || formData.controls['email'].touched">
-            <div class="error-warning" *ngIf="formData.controls['email'].errors?.required">
+        <div *ngIf="email.invalid && email.dirty || email.touched">
+            <div class="error-warning" *ngIf="email.errors?.required">
                 Email obligatoire.
             </div>
-            <div class="error-warning" *ngIf="formData.controls['email'].errors?.pattern">
+            <div class="error-warning" *ngIf="email.errors?.pattern">
                 Veuillez entrer un email valide.
             </div>
         </div>
@@ -42,8 +48,8 @@
             <label class="required" for="message">Message:</label>
             <textarea formControlName="message" placeholder="Votre message"></textarea>
         </div>
-        <div *ngIf="formData.controls['message'].invalid && formData.controls['message'].dirty || formData.controls['message'].touched">
-            <div class="error-warning" *ngIf="formData.controls['message'].errors?.required">
+        <div *ngIf="message.invalid && message.dirty || message.touched">
+            <div class="error-warning" *ngIf="message.errors?.required">
                 Message obligatoire.
             </div>
         </div>

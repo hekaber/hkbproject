@@ -65,12 +65,17 @@ button[type="submit"]:hover {
 
 .error-warning {
     color: red;
+    background-color: #FFDB99;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 @media(min-width: 768px){
 
     .error-warning {
-        padding-left: 20%;
+        position: relative;
+        width: 77%;
+        left: 20%;
     }
 
     .form-control label {
