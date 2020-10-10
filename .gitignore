@@ -42,6 +42,7 @@ speed-measure-plugin*.json
 /angular-hkb/yarn-error.log
 /angular-hkb/testem.log
 /angular-hkb/typings
+/django-hkb/djangohkb/__pycache__
 
 # System Files
 .DS_Store
