@@ -43,8 +43,8 @@ speed-measure-plugin*.json
 /angular-hkb/testem.log
 /angular-hkb/typings
 /django-hkb/djangohkb/__pycache__
-/django-hkb/djangohkb/api/__pycache__
-/django-hkb/djangohkb/api/migrations/__pycache__
+/django-hkb/api/__pycache__
+/django-hkb/api/migrations/__pycache__
 
 # System Files
 .DS_Store
