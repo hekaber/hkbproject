@@ -28,6 +28,8 @@ services: # Here we define our service(s)
             - POSTGRES_DB=postgres
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
+        ports:
+            - "5433:5432"
 
     django-service:
         container_name: djangocontainer
